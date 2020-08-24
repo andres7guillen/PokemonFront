@@ -1,0 +1,33 @@
+<h4>Rol/User</h4>
+<hr>
+
+<div class="row animated fadeIn faster">
+    <div class="col">
+        <form #f="ngForm">
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" [(ngModel)]="userRol.UserEmail" name="email" required class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Rol:</label>
+                <input maxlength="40" type="text" [(ngModel)]="userRol.Rol" name="rol" class="form-control">
+            </div>
+
+            <hr>
+            <div class="form-group text-center">
+                <button (click)="associate()" type="button" class="btn btn-primary w-25">
+          <i class="fa fa-save"></i>
+          Associate
+        </button>
+            </div>
+
+            <div class="form-group text-center">
+                <button (click)="remove()" type="button" class="btn btn-primary w-25">
+          <i class="fa fa-save"></i>
+          Remove
+        </button>
+            </div>
+        </form>
+    </div>
+</div>

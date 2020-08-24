@@ -1,0 +1,36 @@
+<h1>Pokemon list</h1>
+<hr>
+
+
+
+<table class="table mt-3 animated fadeIn faster">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <!-- <th scope="col">Tipo(s)</th> -->
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pokemon of listado | paginate: { itemsPerPage: countPage, currentPage: p }; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{pokemon.name}}</td>
+            <td>
+                <button [routerLink]="['/detailPokemon',pokemon.url]" class="btn btn-info">
+          <i class="fa fa-eye"></i>  
+        </button>
+            </td>
+
+        </tr>
+    </tbody>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    <label for="cantidadItems">Cantidad items por página: </label>
+    <select [(ngModel)]="countPage" name="cantidadItems">
+    <option [value]="10">10</option>
+    <option [value]="20">20</option>
+    <option [value]="30">30</option>
+    <option [value]="40">40</option>
+    <option [value]="50">50</option>
+</select>
+</table>

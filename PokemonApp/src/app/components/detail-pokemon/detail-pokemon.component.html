@@ -1,0 +1,32 @@
+<div class="row text-right">
+    <div class="col">
+        <button routerLink="/listPokemon" class="btn btn-danger">
+      <i class="fa fa-arrow-left"> Regresar</i>
+    </button>
+    </div>
+</div>
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{pokemon.name}}</h5>
+        <img src="{{pokemon.sprites.other.dream_world.front_default}}">
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h5>Types:</h5>
+        <ul>
+            <li *ngFor="let tipo of pokemon.types">{{tipo.type.name}}</li>
+        </ul>
+        <h5>Id:</h5>
+        <span>{{pokemon.id}}</span>
+        <h5>Height:</h5>
+        <span>{{pokemon.height}}</span>
+        <h5>Weight:</h5>
+        <span>{{pokemon.weight}}</span>
+        <h5>Moves:</h5>
+        <ul>
+            <li *ngFor="let move of pokemon.moves">{{move.move.name}}</li>
+        </ul>
+    </div>
+</div>
